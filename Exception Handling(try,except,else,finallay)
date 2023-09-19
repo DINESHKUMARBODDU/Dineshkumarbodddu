@@ -1,0 +1,24 @@
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    print(f"Error: {e}")
+else:
+    print("No error occurred.")
+finally:
+    print("This block always executes.")
+def switch_case(case):
+    switch_dict = {
+        'case1': 'This is case 1',
+        'case2': 'This is case 2',
+        'default': 'This is the default case'
+    }
+    return switch_dict.get(case, 'Invalid case')
+
+print(switch_case('case1'))
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = [num**2 for num in numbers if num % 2 == 0]
+print(squared_numbers)
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = (num**2 for num in numbers if num % 2 == 0)
+for num in squared_numbers:
+    print(num)

@@ -1,0 +1,57 @@
+[12:24 PM, 9/19/2023] Steve -Jobs 🤞🏻: # Creating a list
+fruits = ["apple", "banana", "cherry"]
+
+# Accessing elements by index
+first_fruit = fruits[0]  # "apple"
+second_fruit = fruits[1]  # "banana"
+
+# Modifying elements
+fruits[2] = "strawberry"  # Update "cherry" to "strawberry"
+
+# Adding elements to the end of the list
+fruits.append("kiwi")
+
+# Inserting elements at a specific index
+fruits.insert(1, "orange")  # Insert "orange" at index 1
+
+# Removing elements
+fruits.remove("banana")  # Remove "banana" by value
+popped_fruit = fruits.pop(2)  # Remove and return element at index 2
+
+# Checking if an element exists in the list
+if "apple" in fruits:
+    print("Yes, 'apple' is in the list")
+
+# Iterating through a list
+for fruit in fruits:
+    print(fruit)
+
+# List length
+num_fruits = len(fruits)
+
+# Sorting a list
+fruits.sort()  # Sort in ascending order
+fruits.reverse()  # Reverse the order
+
+# Creating a copy of a list
+fruits_copy =
+[12:24 PM, 9/19/2023] Steve -Jobs 🤞🏻: # Creating a tuple
+colors = ("red", "green", "blue")
+
+# Accessing elements by index (similar to lists)
+first_color = colors[0]  # "red"
+
+# Tuple packing and unpacking
+coordinates = (3, 4)  # Tuple packing
+x, y = coordinates  # Tuple unpacking: x=3, y=4
+
+# Iterating through a tuple
+for color in colors:
+    print(color)
+
+# Tuple length (similar to lists)
+num_colors = len(colors)
+
+# Checking if an element exists in the tuple (similar to lists)
+if "red" in colors:
+    print("Yes, 'red' is in the tuple"

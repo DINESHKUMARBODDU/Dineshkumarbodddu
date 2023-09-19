@@ -1,0 +1,39 @@
+1. Integer variable:
+python
+age = 25
+
+
+2. Floating-point variable:
+python
+pi = 3.14159
+
+
+3. String variable:
+python
+name = "John"
+
+
+4. Boolean variable:
+python
+is_student = True
+
+
+5. List variable:
+python
+fruits = ["apple", "banana", "cherry"]
+
+
+6. Dictionary variable:
+python
+person = {"name": "Alice", "age": 30}
+
+
+7. Tuple variable:
+python
+coordinates = (12.34, 56.78)
+
+
+8. NoneType variable:
+python
+result = None
+

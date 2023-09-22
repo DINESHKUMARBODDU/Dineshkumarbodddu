@@ -1,0 +1,29 @@
+# Define a class
+class Animal:
+    def _init_(self, name):
+        self.name = name
+
+    def speak(self):
+        pass
+
+# Create subclasses
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+
+# Create objects
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+# Polymorphism in action
+animals = [dog, cat]
+for animal in animals:
+    print(animal.speak())
+
+# Output:
+ Buddy says Woof!
+Whiskers says Meow

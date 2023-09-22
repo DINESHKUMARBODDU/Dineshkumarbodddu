@@ -1,0 +1,9 @@
+import pdb
+
+def some_function():
+    x = 5
+    pdb.set_trace()  # Set a breakpoint
+    y = x + 10
+    return y
+
+result = some_function()

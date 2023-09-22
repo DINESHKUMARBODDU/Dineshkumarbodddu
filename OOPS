@@ -19,11 +19,11 @@ class Cat(Animal):
 dog = Dog("Buddy")
 cat = Cat("Whiskers")
 
-# Polymorphism in action
+# Polymorphism 
 animals = [dog, cat]
 for animal in animals:
     print(animal.speak())
 
-# Output:
-# Buddy says Woof!
-# Whiskers says Meow!
+Output:
+Buddy says Woof!
+ Whiskers says Meow!

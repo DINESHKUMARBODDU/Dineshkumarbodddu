@@ -1,0 +1,37 @@
+import csv
+
+# Initialize dictionaries to store product quantities and revenue
+product_quantities = {}
+product_revenue = {}
+
+# Read the CSV file
+with open('customer_orders.csv', 'r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
+    
+    # Iterate through each row in the CSV
+    for row in csv_reader:
+        order_id = int(row['OrderID'])
+        product = row['Product']
+        quantity = int(row['Quantity'])
+        price = float(row['Price'])
+        
+        # Update product quantities
+        if product in product_quantities:
+            product_quantities[product] += quantity
+        else:
+            product_quantities[product] = quantity
+        
+        # Update product revenue
+        if product in product_revenue:
+            product_revenue[product] += quantity * price
+        else:
+            product_revenue[product] = quantity * price
+
+# Print insights
+print("Product Quantities:")
+for product, quantity in product_quantities.items():
+    print(f"{product}: {quantity} units")
+
+print("\nProduct Revenue:")
+for product, revenue in product_revenue.items():
+    print(f"{product}: ${revenue:.2f}")

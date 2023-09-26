@@ -1,0 +1,20 @@
+import csv
+import random
+
+num_entries = 100
+
+data = []
+for _ in range(num_entries):
+    name = ''.join(random.choice('ABCDEFGHIJKLMNOPQRSTUVWXYZ') for _ in range(5))
+    age = random.randint(18, 80)
+    score = round(random.uniform(0, 100), 2)
+    data.append([name, age, score])
+csv_file = 'random_data.csv'
+
+
+with open(csv_file, mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Name', 'Age', 'Score'])  # Write header row
+    writer.writerows(data)
+
+print(f"CSV file '{csv_file}' with {num_entries} random entries has been generated.")

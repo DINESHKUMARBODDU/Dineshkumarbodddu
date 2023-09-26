@@ -1,0 +1,37 @@
+import pandas as pd
+
+# Task 1: Read data from "customer_orders.csv" into a DataFrame
+try:
+    df = pd.read_csv("customer_orders.csv")
+except FileNotFoundError:
+    print("Error: File 'customer_orders.csv' not found.")
+    exit()
+
+# Task 2: Calculate and display total revenue
+total_revenue = (df['Price'] * df['Quantity']).sum()
+print(f"Total Revenue: ${total_revenue:.2f}")
+
+# Task 3: Determine the most popular product
+most_popular_product = df.groupby('Product')['Quantity'].sum().idxmax()
+most_popular_quantity = df.groupby('Product')['Quantity'].sum().max()
+print(f"Most Popular Product: {most_popular_product} (Quantity: {most_popular_quantity})")
+
+# Task 4: Calculate and display average product price
+average_price = df['Price'].mean()
+print(f"Average Product Price: ${average_price:.2f}")
+
+# Task 5: Find and display the top 5 products with the highest total revenue
+top_5_products = df.groupby('Product')['Revenue'].sum().nlargest(5)
+print("\nTop 5 Products by Revenue:")
+print(top_5_products)
+
+# Task 6: Write product summary to "product_summary.csv"
+product_summary = df.groupby('Product').agg({'Quantity': 'sum', 'Revenue': 'sum'}).reset_index()
+product_summary.columns = ['Product', 'TotalQuantityOrdered', 'TotalRevenue']
+
+try:
+    product_summary.to_csv("product_summary.csv", index=False)
+    print("\nProduct summary saved to 'product_summary.csv'.")
+except Exception as e:
+    print(f"Error while writing product summary: {str(e)}")
+
